@@ -3,6 +3,7 @@ package uncompress
 import (
 	"archive/zip"
 	"bytes"
+	"fmt"
 	"io"
 	"io/ioutil"
 	"os"
@@ -12,6 +13,9 @@ import (
 	"golang.org/x/text/transform"
 )
 
+func init() {
+	fmt.Println("zip init")
+}
 func Unzip(zipFile string, destDir string) error {
 	zipReader, err := zip.OpenReader(zipFile)
 	if err != nil {
