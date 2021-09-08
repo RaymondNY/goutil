@@ -1,13 +1,11 @@
 package main
 
 import (
-	"zqx.com/goutil/uncompress"
+	"github.com/gin-gonic/gin"
+	"zqx.com/goutil/middlewares"
 )
 
 func main() {
-	// err := a.Unarchive("/home/files/虚拟机.zip", "/home/files")
-	// if err != nil {
-	// 	log.Fatal(err)
-	// }
-	uncompress.Unzip("/home/files/虚拟机.zip", "/home/files")
+	r := gin.Default()
+	r.Use(middlewares.Cors())
 }
